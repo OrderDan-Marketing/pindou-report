@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>拼豆 台灣市場調查</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+:root{
+  --paper:#FFFFFF;
+  --paper-2:#F6F4F0;
+  --ink:#24211F;
+  --ink-2:#575250;
+  --ink-3:#8A8481;
+  --rule:#E3DFD9;
+  --acc:#C2452F;
+  --acc-soft:#FBEAE6;
+  --gold:#B08A2E;
+  --teal:#2F6F73;
+  --teal-soft:#E4F0F0;
+  --lv-mid:#D98B3A;
+  --lv-low:#B9B2AB;
+  --flag:#8A2C1F;
+  --flag-soft:#FFF4F1;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;font-size:19px;line-height:1.75;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:48px 28px 72px}
+h1,h2,h3{font-family:"Noto Serif TC","PMingLiU",serif;text-wrap:balance;margin:0}
+a{color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(47,111,115,.35)}
+a:hover{border-bottom-color:var(--teal)}
+.eyebrow{font-size:12px;letter-spacing:.18em;color:var(--acc);text-transform:uppercase;font-weight:500}
+.mast{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;padding-bottom:28px;border-bottom:2px solid var(--acc)}
+.mast h1{font-size:34px;line-height:1.25;font-weight:700;margin-top:10px}
+.mast .sub{color:var(--ink-2);margin-top:8px;max-width:62ch}
+.meta{font-size:17px;color:var(--ink-3);text-align:right;line-height:1.9}
+.meta b{color:var(--ink);font-weight:500}
+section{margin-top:52px}
+section>h2{font-size:22px;font-weight:700;padding-left:14px;border-left:4px solid var(--gold);line-height:1.3}
+section>h2 small{display:block;font-family:"Noto Sans TC",sans-serif;font-size:13px;color:var(--ink-3);font-weight:400;margin-top:4px;letter-spacing:.04em}
+section>h2.primary{border-left-color:var(--acc)}
+.lead{max-width:70ch;color:var(--ink-2);margin:16px 0 0}
+/* verdict */
+.verdict{margin-top:28px;display:grid;grid-template-columns:1.2fr 1fr;gap:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.verdict>div{padding:22px 20px}
+.verdict>div:first-child{border-right:1px solid var(--rule)}
+.verdict .l{font-size:12px;color:var(--ink-3);letter-spacing:.08em}
+.verdict .v{font-family:"Noto Serif TC",serif;font-size:28px;font-weight:700;line-height:1.2;margin-top:6px;color:var(--acc)}
+.verdict p{margin:8px 0 0;color:var(--ink-2);font-size:18px}
+/* pills */
+.pill{display:inline-block;font-size:13px;padding:1px 9px;border-radius:2px;font-weight:700;letter-spacing:.04em;white-space:nowrap;vertical-align:middle}
+.pill.a{background:var(--teal);color:#fff}
+.pill.b{background:var(--lv-mid);color:#fff}
+.pill.c{background:var(--paper-2);color:var(--ink-2);border:1px solid var(--rule)}
+.pill.d{background:var(--acc);color:#fff}
+.pill.none{background:transparent;color:var(--ink-3);border:1px dashed var(--ink-3)}
+.pill.flag{background:var(--flag);color:#fff}
+.legend{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:16px;font-size:16px;color:var(--ink-2)}
+/* tables */
+.tblwrap{overflow-x:auto;margin-top:18px}
+table{border-collapse:collapse;width:100%;font-size:17px;line-height:1.6}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-weight:500;color:var(--ink-3);font-size:13px;letter-spacing:.06em;border-bottom:1px solid var(--ink-3);white-space:nowrap}
+td:first-child{font-weight:700;min-width:150px}
+td q{quotes:"「" "」";color:var(--ink);font-style:normal}
+td.src{white-space:nowrap}
+/* cities */
+.cities{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+.city{background:var(--paper-2);padding:20px 20px 16px;border-top:3px solid var(--rule)}
+.city.lo{border-top-color:var(--lv-mid)}
+.city.none{border-top-color:var(--lv-low)}
+.city h3{font-size:19px;font-weight:700;display:flex;justify-content:space-between;align-items:baseline}
+.city ul{margin:12px 0 0;padding-left:16px;font-size:17.5px;color:var(--ink-2)}
+.city li+li{margin-top:6px}
+.city li b{color:var(--ink);font-weight:500}
+/* facets */
+.facets{margin-top:22px;display:grid;gap:0}
+.facet{display:grid;grid-template-columns:170px 1fr;gap:18px;padding:20px 0;border-top:1px solid var(--rule)}
+.facet:last-child{border-bottom:1px solid var(--rule)}
+.facet h3{font-size:17px;font-weight:700;line-height:1.4;color:var(--ink)}
+.facet h3 .lv{display:block;font-family:"Noto Sans TC",sans-serif;font-size:13px;font-weight:500;margin-top:6px;letter-spacing:.06em}
+.lv.mid{color:var(--lv-mid)}.lv.lo{color:var(--ink-3)}
+.facet p{margin:0;color:var(--ink-2);max-width:70ch}
+.facet p+p{margin-top:8px}
+.facet ul{margin:8px 0 0;padding-left:18px;color:var(--ink-2)}
+.facet li+li{margin-top:4px}
+/* flagged blocks */
+.flagbox{margin-top:22px;padding:18px 22px;background:var(--flag-soft);border-left:4px solid var(--flag)}
+.flagbox h3{font-size:18px;font-weight:700;color:var(--flag);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.flagbox h3 .pill{font-size:12px}
+.flagbox p{margin:10px 0 0;color:var(--ink-2);max-width:72ch}
+.flagbox ul{margin:10px 0 0;padding-left:18px;color:var(--ink-2)}
+.flagbox li+li{margin-top:4px}
+/* implications */
+.impl{margin-top:20px;display:grid;gap:14px}
+.impl article{display:grid;grid-template-columns:140px 1fr;gap:18px;padding:16px 0;border-top:1px solid var(--rule)}
+.impl article:last-child{border-bottom:1px solid var(--rule)}
+.impl h3{font-size:16px;font-weight:700;color:var(--acc);line-height:1.5}
+.impl p{margin:0;color:var(--ink-2);max-width:66ch}
+/* gaps */
+.gaps{margin:16px 0 0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:6px 24px;font-size:17.5px;color:var(--ink-2)}
+.gaps li{padding:6px 0 6px 14px;border-left:2px solid var(--rule)}
+.gaps li b{color:var(--ink);font-weight:500}
+/* sources grouped */
+.srcg{margin:16px 0 0;padding:0;list-style:none;font-size:17px;color:var(--ink-2)}
+.srcg li{padding:12px 0;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:130px 1fr;gap:14px}
+.srcg li>span{color:var(--ink);font-weight:700}
+.srcg li.hi>span{color:var(--acc)}
+.srcg li div a{margin-right:6px}
+.srcg li div a::after{content:" ·";color:var(--ink-3)}
+.srcg li div a:last-child::after{content:""}
+.note{font-size:16.5px;color:var(--ink-3);margin-top:12px;max-width:72ch}
+.callout{margin-top:22px;padding:16px 20px;background:var(--teal-soft);border-left:4px solid var(--teal);font-size:18px;color:var(--ink-2);max-width:72ch}
+.callout b{color:var(--teal)}
+.foot{margin-top:56px;padding-top:18px;border-top:1px solid var(--rule);font-size:12px;color:var(--ink-3);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media (max-width:760px){
+  .wrap{padding:32px 18px 56px}
+  .mast{grid-template-columns:1fr}
+  .meta{text-align:left}
+  .mast h1{font-size:28px}
+  .verdict{grid-template-columns:1fr}
+  .verdict>div:first-child{border-right:0;border-bottom:1px solid var(--rule)}
+  .cities{grid-template-columns:1fr}
+  .facet{grid-template-columns:1fr;gap:6px}
+  .impl article{grid-template-columns:1fr;gap:6px}
+  .gaps{grid-template-columns:1fr}
+  .srcg li{grid-template-columns:1fr;gap:4px}
+  td:first-child{min-width:120px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <div>
+      <div class="eyebrow">市場調查 · 台灣</div>
+      <h1>拼豆(Perler Beads)<br>台灣市場調查</h1>
+      <div class="sub">主指標:台灣有沒有「像夾娃娃機店那樣隨到隨玩」的開放式拼豆店。副指標:電商與打包回家(材料、材料包)通路。高雄、台南、屏東獨立盤點。只列有頁面來源的資料,抓不到的一律標「查無」。</div>
+    </div>
+    <div class="meta">
+      執行單位 <b>Orderdan 簡單營銷</b><br>
+      調查日期 <b>2026-09-08</b><br>
+      調查方法 <b>公開網頁搜尋 + 頁面擷取</b><br>
+      涵蓋範圍 <b>台灣全區 + 南台灣</b>
+    </div>
+  </header>
+
+  <div class="verdict">
+    <div>
+      <div class="l">主指標 · 開放式拼豆店(隨到隨玩)</div>
+      <div class="v">台灣查無</div>
+      <p>目前查到的台灣據點全部帶「預約」性質。最接近的是台北內湖「樂拼豆」:自稱全自助式、有時段計價,但貼文仍出現「預約」字眼,無法認定為走進去就玩。其餘皆為預約制工作坊、課程或遊樂園附設手作區。</p>
+    </div>
+    <div>
+      <div class="l">副指標 · 電商與打包回家</div>
+      <div class="v">通路已就緒</div>
+      <p>momo、PChome 24h、蝦皮都有分類與專門店;台灣本地有製膠珠的材料商;高雄、台南有實體材料行。材料包與課程材料費是目前主要的「帶回家」形式。</p>
+    </div>
+  </div>
+
+  <section>
+    <h2 class="primary">主指標:開放式拼豆店盤點<small>台灣全區 · 逐家判定營業型態</small></h2>
+    <div class="legend">
+      <span><span class="pill a">A</span> 開放式自助空間,免預約、隨到隨玩</span>
+      <span><span class="pill b">B</span> 預約制體驗課程 / 工作坊</span>
+      <span><span class="pill c">C</span> 接案、客製、賣材料包</span>
+      <span><span class="pill d">D</span> 混合,最接近 A</span>
+    </div>
+    <div class="tblwrap">
+      <table>
+        <tr><th>據點</th><th>城市</th><th>型態</th><th>店家自述原文與依據</th><th>收費</th></tr>
+        <tr><td>樂拼豆 roll.pindou<br><small>內湖江南店,港墘站步行 7 分</small></td><td>台北</td><td><span class="pill d">D</span></td><td><q>采全自助式|想玩但沒工具也能來</q>、<q>客製化小禮物|創意拼豆教學</q>,營業 11:30–21:30,但 9 月檔期寫「已開放預約」。全自助與時段計價接近 A,預約字眼與教學服務讓它停在 D。</td><td>每週二 16:00–22:00 特惠 NT$799,其他時段未列</td></tr>
+        <tr><td>拼豆莢 pixelpod_tw<br><small>中山站 2 號出口步行 7 分</small></td><td>台北</td><td><span class="pill b">B</span></td><td><q>材料跟工具都幫你準備好,只要人來就好</q>、<q>不限時方案拼到飽</q>、<q>採預約制,私訊 IG</q>。</td><td>未列金額,需洽 IG</td></tr>
+        <tr><td>踏踏拼豆手作店 tata.pindou<br><small>一中街</small></td><td>台中</td><td><span class="pill b">B</span></td><td><q>台中一中街融合豆拼豆店,預約請至 IG</q>,221 色。</td><td>查無</td></tr>
+        <tr><td>Yukids ART 手作坊<br><small>大魯閣遊戲愛樂園附設</small></td><td>台北信義 A8、新竹湳雅、台中新時代、高雄夢時代、高雄左營</td><td><span class="pill b">B</span></td><td>官網為「手作課程預約」頁,線上選日期時段;課程含<q>趣味拼豆,製作專屬吊飾或擺件</q>。遊樂園附設手作區是型態上最接近隨到隨玩的,但官網明寫線上預約。</td><td>網路預約訂金 NT$100 可折抵課程費,課程費另計</td></tr>
+        <tr><td>哈皮樂園<br><small>文心秀泰店</small></td><td>台中</td><td><span class="pill b">B</span></td><td>需至少提早 3 日電話預約,固定場次,課程 20–30 分鐘。</td><td>momo 售票,台中通 95 折,原價未列</td></tr>
+        <tr><td>樂芙 Love 愛手作 luvlovecool</td><td>台中</td><td><span class="pill none">無法判定</span></td><td>IG 簡介<q>台中 DIY・拼豆課程</q>、<q>企業活動・團體包班</q>,未見免預約或計時字樣。</td><td>查無</td></tr>
+      </table>
+    </div>
+    <p class="note">已排除:Hato Workshop 拼豆工作坊查證為香港荔枝角店家(港幣計價、上門前請先預約),不屬台灣。全台搜尋「自助拼豆店」「拼豆休憩室」「無人拼豆店」「拼豆店 計時」皆查無台灣店家;Dcard 查無拼豆店開箱文,只有材料選購心得。</p>
+  </section>
+
+  <section>
+    <h2 class="primary">南台灣:高雄、台南、屏東<small>查詢重點 · 開放式據點 + 材料通路</small></h2>
+    <div class="cities">
+      <div class="city lo">
+        <h3>高雄 <span class="pill b">疑似有,預約制</span></h3>
+        <ul>
+          <li><b>Yukids ART 手作坊 夢時代店、左營店</b>:含趣味拼豆課程,線上預約、訂金 NT$100 可折抵,時段 11:00–19:00。高雄唯一確認含拼豆的據點,但非隨到隨玩。</li>
+          <li><b>HW CRAFT</b>(三民區十全一路 369 號):官網只有材料目錄(3mm/5mm 膠珠、工具、材料包),無現場座位、計時或預約說明,型態無法判定,需電洽 07-3227657。</li>
+          <li><b>草莓丸子、英秀手藝行</b>:第三方部落格列有膠珠材料,未核實。</li>
+          <li>夢時代、漢神巨蛋、義大世界、SKM Park、大立、統一時代樓層與活動頁:查無拼豆櫃位。市府 13 間親子館、桌遊店、手作咖啡廳:查無。</li>
+          <li>Threads 留言提到「高雄有新的拼豆店」,找不到原文與店名,未採信。曾出現在高雄搜尋結果的「樂拼豆」實查在台北內湖,已排除。</li>
+        </ul>
+      </div>
+      <div class="city none">
+        <h3>台南 <span class="pill none">查無</span></h3>
+        <ul>
+          <li><b>大魯閣遊戲愛樂園 南紡店</b>:頁面標註 2025/02/17 結束營業,原設施為氣球屋、球池,未見拼豆。Yukids ART 官網查無台南據點。</li>
+          <li><b>朵拉手藝行</b>(中西區國華街三段 25 號):搜尋摘要提及店內賣拼豆、有免費教學,FB/IG 原文無法擷取,是否為現場付費座位無法判定,需電洽 06-2294315。</li>
+          <li><b>禾青手工藝行 台南店</b>(東區崇善路 491-1 號):只有聯絡資訊,查無現場體驗。</li>
+          <li>南紡、新光三越小西門、三井 Outlet(含 2026 春二期)、正興街、神農街:查無拼豆櫃位或店家。KKday、FunTime 台南 DIY 懶人包:未列拼豆。</li>
+          <li>約 2026 年 8 月一則 Threads 貼文「台南會有人想玩拼豆嗎,想開一間小小的拼豆店」,屬開店意向,非既有店,連結未能確認。</li>
+        </ul>
+      </div>
+      <div class="city none">
+        <h3>屏東 <span class="pill none">查無</span></h3>
+        <ul>
+          <li>獨立拼豆店、親子館、太平洋百貨當期活動與樓層、墾丁:全部查無開放式據點。</li>
+          <li>墾丁凱撒大飯店疑似有房客活動「拼豆鑰匙圈 DIY」,僅見部落格片段,未核實官方頁面,且為房客專屬,不列入。</li>
+          <li>八大昌、101 文具天堂等文具行品項未見膠珠。愛屏東、屏東點+ 等在地帳號無相關發文。</li>
+          <li>可能是搜尋盲區(LINE 社群、市集現場),不等於零需求;屏東需求可能跨區到高雄或網購滿足。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout"><b>南台灣判讀</b>:三縣市都沒有開放式拼豆店。高雄有遊樂園附設的預約制拼豆課程與材料行,台南只有材料行與一則開店意向,屏東連材料通路訊號都查無。Google Maps 為動態頁無法擷取店家清單,南部「查無」宜解讀為「公開網頁查不到」,設點前建議實地或電話確認上列材料行是否有現場座位。</div>
+  </section>
+
+  <section>
+    <h2>副指標:電商與打包回家通路<small>材料、材料包、實體材料行</small></h2>
+    <div class="facets">
+      <div class="facet">
+        <h3>綜合電商<span class="lv mid">分類與專門店已存在</span></h3>
+        <ul>
+          <li><b>momo</b>:「串珠/拼豆」分類歸在益智玩具,品牌百獅、MatsuTa 松太、真愛家。</li>
+          <li><b>PChome 24h</b>:專門店「拼豆及板材補給站」,方形、圓形、六角、星形、心形模板與燙紙。</li>
+          <li><b>蝦皮</b>:大量賣場,含台中出貨的 120 色 2.6mm 瓶裝套組;頁面動態載入,銷量排行與價格帶抓不到。</li>
+        </ul>
+      </div>
+      <div class="facet">
+        <h3>台灣本地供應<span class="lv mid">有製造與材料行</span></h3>
+        <ul>
+          <li><b>小熊媽媽 DIY</b>:線上販售台灣製膠珠小包、大包。</li>
+          <li><b>高雄</b>:HW CRAFT(三民區)官網列 2.6mm/5mm 膠珠、太陽拼豆材料包。<b>台南</b>:朵拉手藝行、禾青手工藝行疑似有賣,未核實。</li>
+          <li><b>品牌</b>:台灣賣場常見百獅、阿國手創(Dcard 評比文比較無毒認證);國際品牌 Artkal(色號最多、性價比)、Hama(丹麥原創)、Perler(美系主流)。</li>
+        </ul>
+      </div>
+      <div class="facet">
+        <h3>打包回家形式<span class="lv lo">材料包為主</span></h3>
+        <p>目前查到的「帶回家」形式是材料包與課程材料費:樂拼豆有客製化小禮物、Hato 類工作坊有 DIY 材料包(該店為香港)、HW CRAFT 有材料包、BeClass 手作課材料費 NT$300 起。查無店家把「店內玩 + 打包回家續拼」做成明碼標價的套餐。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>課程與快閃活動<small>全台 · 中北部有、南部只有高雄</small></h2>
+    <div class="flagbox">
+      <h3><span class="pill flag">標註</span>課程:確定有,集中台北、台中,全部預約制</h3>
+      <div class="tblwrap">
+        <table>
+          <tr><th>主辦 / 場地</th><th>城市</th><th>課程</th><th>時段</th><th>收費</th></tr>
+          <tr><td>樂拼豆 roll.pindou</td><td>台北 內湖</td><td>拼豆自助體驗、教學,開學優惠、每週二特惠場</td><td>常態 11:30–21:30,私訊預約</td><td>週二特惠 NT$799</td></tr>
+          <tr><td>拼豆莢 pixelpod_tw</td><td>台北 中山</td><td>平日不限時拼豆體驗;2025/12 試營運聖誕主題活動</td><td>常態,私訊預約</td><td>未列</td></tr>
+          <tr><td>BeClass 報名頁(主辦未標名)</td><td>台北</td><td>創意拼豆吊飾 DIY + 皮條英文敲字</td><td>電話預約 10:00–18:00</td><td>材料費 NT$300 起</td></tr>
+          <tr><td>中國文化大學推廣教育部</td><td>台北本部、台中、高雄分部</td><td>創意立體拼豆 DIY,世界地標文具組</td><td>課程框架頁,梯次未列</td><td>查無</td></tr>
+          <tr><td>哈皮樂園 文心秀泰店</td><td>台中</td><td>拼豆、史萊姆、奶油膠 DIY</td><td>提早 3 日電話預約</td><td>台中通 95 折</td></tr>
+          <tr><td>Yukids ART 手作坊</td><td>台北信義、新竹、台中、高雄×2</td><td>拼豆吊飾、擺飾</td><td>線上預約</td><td>訂金 NT$100 可折抵</td></tr>
+          <tr><td>樂芙 Love 愛手作</td><td>台中</td><td>拼豆課程、企業包班</td><td>未列</td><td>查無</td></tr>
+        </table>
+      </div>
+      <p>新北、基隆、桃園、新竹(Yukids 除外)、苗栗、彰化、南投查無 2025–2026 拼豆課程。社大、救國團、圖書館、親子館、百貨文化教室、Accupass、KKTIX、Klook、KKday 站內皆查無現行上架的拼豆課程(唯一 KKTIX 舊案為 2014 年,不列)。桃園中壢有一筆「拼豆手作課程」搜尋片段,無可核實網址,不列。</p>
+    </div>
+    <div class="flagbox">
+      <h3><span class="pill flag">標註</span>快閃活動與市集攤位:全台查無</h3>
+      <p>百貨快閃(信義區、微風、新光三越、SOGO、中友、台中新光、Park Lane、LaLaport、夢時代、漢神、南紡、太平洋)與文創市集(華山、松菸、四四南村、審計新村、勤美、逢甲、大稻埕)2025–2026 彙整頁皆未見拼豆主題快閃店或攤位。同期百貨快閃以酷洛米、哈利波特、獵人等 IP 為主。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>網紅帶動案例與風險<small>兩項標註</small></h2>
+    <div class="flagbox">
+      <h3><span class="pill flag">標註</span>網紅、名人帶動案例:查無可驗證案例</h3>
+      <ul>
+        <li>找到的只有零星手作教學影片:YouTube「ching 愛手作」拼豆短片、「SunnyYummy」精巧藝術系列拼豆影片,頁面未顯示觀看數與日期,無法確認是否引發討論。</li>
+        <li>三立、民視新聞 YouTube 有拼豆報導,內容是安全事故議題,非台灣創作者原創拼豆內容。</li>
+        <li>查無台灣藝人、直播主或大型 YouTuber 以拼豆為主題的開箱、擺攤 Vlog。</li>
+      </ul>
+    </div>
+    <div class="flagbox">
+      <h3><span class="pill flag">標註</span>風險:安全事故已進台灣新聞</h3>
+      <ul>
+        <li>ETtoday 2026-04-10「抖音網紅玩具拼豆紅到台灣,揭安全疑慮」;三立、民視亦報導拼豆玩具電壓超標、女童觸電事件。</li>
+        <li>Dcard 評比文以「無毒、不刺鼻」為主軸,反映消費者已在意材料安全與燙珠異味。</li>
+        <li>開店或販售時,SGS/BSMI 認證、熨斗與電源安全是信任訊號,也是潛在負面聲量點,溝通上要主動處理。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>聲量背景<small>台灣 · 搜尋、社群、媒體</small></h2>
+    <div class="facets">
+      <div class="facet">
+        <h3>搜尋趨勢<span class="lv lo">查無台灣數據</span></h3>
+        <p>找不到任何媒體或分析網站引用「拼豆」台灣 Google Trends 曲線。「拼豆圖案」「拼豆圖紙」「拼豆材料」「拼豆教學」有明確搜尋意圖(多個免費圖紙產生器工具站存在),量級未驗證。</p>
+      </div>
+      <div class="facet">
+        <h3>社群<span class="lv mid">Threads 集中</span></h3>
+        <p>台灣在地工作室(樂拼豆、拼豆莢、踏踏)與個人「想入坑、材料哪買、推薦賣家」貼文集中在 Threads。Dcard 有一篇 2026 拼豆推薦 7 款評比文(頁面拒絕擷取,互動數未驗證)。PTT 查無原始討論串;Facebook 查無台灣專屬社團,「拼拼豆豆」粉專為香港帳號。</p>
+      </div>
+      <div class="facet">
+        <h3>媒體<span class="lv lo">只有安全事故角度</span></h3>
+        <p>ETtoday 2026-04-10 一則,內文聚焦安全事故,無台灣流行程度數字。聯合、自由、風傳媒、天下、Vogue、ELLE 查無專屬台灣報導。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>對開店評估的含義<small>依可查證資料推論 · 廣告投放屬後期,不在此階段</small></h2>
+    <div class="impl">
+      <article><h3>空缺</h3><p>「隨到隨玩」的開放式拼豆店在台灣目前是空白,連台北都只到「全自助但要預約」。若要做夾娃娃店型態,沒有既有同業可對標,也沒有既有客群習慣可承接。</p></article>
+      <article><h3>最近的樣板</h3><p>樂拼豆(內湖)的全自助、時段計價,與 Yukids ART 的遊樂園附設手作區,是台灣現有最接近的兩種型態;評估南部設點前,先實地看這兩家的動線、計費與人力配置。</p></article>
+      <article><h3>南部順序</h3><p>高雄先(有遊樂園附設拼豆課程與材料行,證明購買與體驗行為存在),台南次之(材料行 + 一則開店意向),屏東先用高雄或台南導流測試,有可驗證訊號再評估。</p></article>
+      <article><h3>受眾</h3><p>全台橫跨親子家庭(遊樂園、哈皮樂園客群)與年輕女性(Threads 療癒手作、入坑討論)。南部現階段偏「已知拼豆、找同好與去處」的手作與收藏族,親子客群尚未擴散。</p></article>
+      <article><h3>帶回家</h3><p>電商與材料行通路已就緒,材料包是現成的副收入;「店內玩 + 打包續拼」套餐目前無人做,可作為與純電商的區隔。</p></article>
+      <article><h3>驗證缺口</h3><p>下決策前要補三件事:Google Trends 與關鍵字規劃工具的台灣月搜尋量、Google Maps 直接搜「高雄 拼豆」「台南 拼豆」的商家清單、電洽 HW CRAFT 與朵拉手藝行確認有無現場座位。</p></article>
+    </div>
+  </section>
+
+  <section>
+    <h2>查無與未驗證清單<small>本次工具端無法取得</small></h2>
+    <ul class="gaps">
+      <li><b>開放式拼豆店</b> 全台查無,樂拼豆型態無法完全判定</li>
+      <li><b>各店完整門牌與價目</b> 多藏在 IG 精選或私訊</li>
+      <li><b>Google Maps 店家清單</b> 動態頁無法擷取</li>
+      <li><b>台灣 Google Trends 曲線</b> 查無第三方引用</li>
+      <li><b>Dcard 互動數</b> 頁面回傳 403</li>
+      <li><b>PTT 原始討論串、FB 社團規模</b> 查無</li>
+      <li><b>帳號粉絲、影片觀看數</b> 皆未列出</li>
+      <li><b>蝦皮銷量與價格帶</b> 動態頁面無法擷取</li>
+      <li><b>快閃、市集攤位</b> 全台查無</li>
+      <li><b>網紅帶動案例</b> 查無可驗證案例</li>
+      <li><b>高雄、台南材料行現場座位</b> 需電洽</li>
+      <li><b>Yukids 總據點頁</b> 回傳 403,據點清單非窮舉</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>主要來源<small>擷取日 2026-09-08 · 依類別各一列</small></h2>
+    <ul class="srcg">
+      <li><span>媒體</span><div><a href="https://www.ettoday.net/news/20260410/3146863.htm">ETtoday 2026-04-10 拼豆紅到台灣</a><a href="https://www.youtube.com/watch?v=wzZ2fTU61IE">三立新聞 拼豆安全報導</a><a href="https://www.youtube.com/shorts/bT1n1gq8IqY">民視新聞 拼豆安全報導</a><a href="https://zh.wikipedia.org/zh-tw/%E6%8B%BC%E8%B1%86">維基百科「拼豆」</a></div></li>
+      <li><span>社群</span><div><a href="https://www.threads.com/@roll.pindou">Threads 樂拼豆 roll.pindou</a><a href="https://www.threads.com/@pixelpod_tw">Threads 拼豆莢 pixelpod_tw</a><a href="https://www.threads.com/@tata.pindou">Threads 踏踏 tata.pindou</a><a href="https://www.dcard.tw/@miaomiao6/post/261139926">Dcard 2026 拼豆推薦評比</a><a href="https://www.threads.com/@siou_10.03/post/DPcduaSj2GG/">Threads 入坑詢問貼文</a><a href="https://www.youtube.com/shorts/uoLtnmlTczc">YouTube ching 愛手作</a><a href="https://www.youtube.com/watch?v=6LKZWnyUxaE">YouTube SunnyYummy</a></div></li>
+      <li><span>電商</span><div><a href="https://www.momoshop.com.tw/search/%E6%8B%BC%E8%B1%86">momo「拼豆」搜尋</a><a href="https://24h.pchome.com.tw/store/DEASYG">PChome 拼豆及板材補給站</a><a href="https://shopee.tw/search?keyword=%E6%8B%BC%E8%B1%86">蝦皮「拼豆」搜尋</a><a href="https://www.bearmama.com.tw/collections/%E5%8F%B0%E7%81%A3-%E8%86%A0%E7%8F%A0%E6%8B%BC%E8%B1%86">小熊媽媽 DIY 台灣製膠珠</a><a href="https://perlerbeads.co/zh/tutorials/brand-comparison">Artkal / Hama / Perler 品牌比較</a></div></li>
+      <li><span>實體品牌</span><div><a href="https://www.yukids.com.tw/product/detail/2100965">Yukids ART 台中新時代預約頁</a><a href="https://tcpass.taichung.gov.tw/coupon/view/8efd9551-a059-462b-9910-960d19db4a9f">哈皮樂園(台中通)</a><a href="https://www.facebook.com/happyland1688/posts/808837977923226/">哈皮樂園 FB 拼豆貼文</a><a href="https://www.instagram.com/luvlovecool/">樂芙 Love 愛手作 IG</a><a href="https://www.beclass.com/rid=254648761234d9a77db6">BeClass 拼豆吊飾 DIY</a><a href="https://www.sce.pccu.edu.tw/courses/3KARB5070?c=0100">文化大學推廣部 拼豆 DIY</a></div></li>
+      <li class="hi"><span>高雄</span><div><a href="https://www.yukids.com.tw/product/detail/2100951">Yukids ART 高雄夢時代店預約頁</a><a href="https://www.yukids.com.tw/product/detail/2100960">Yukids ART 高雄左營店預約頁</a><a href="https://www.hw-diy.com/">HW CRAFT 手工藝材料</a><a href="https://www.facebook.com/marketplace/item/548598854750027/">FB Marketplace 高雄個人出清</a><a href="https://www.greenbox.tw/BabyFood/BlogDetail/7901">高雄市親子館介紹</a></div></li>
+      <li class="hi"><span>台南</span><div><a href="https://www.abic.com.tw/place/view/id/7392">大魯閣南紡店 歇業紀錄</a><a href="https://www.facebook.com/diydhola/">朵拉手藝行 FB</a><a href="https://www.pcstore.com.tw/diy_dhola/M05388612.htm">朵拉手藝材料店(PChome 商店街)</a><a href="https://www.facebook.com/p/%E7%A6%BE%E9%9D%92%E6%89%8B%E5%B7%A5%E8%97%9D%E8%A1%8C-%E5%8F%B0%E5%8D%97%E5%BA%97-100057527886608/">禾青手工藝行 台南店</a><a href="https://www.tsrd.com.tw/">南紡購物中心</a><a href="https://www.kkday.com/zh-tw/blog/66246/asia-taiwan-tainan-diy-ai">KKday 台南 DIY 懶人包</a></div></li>
+      <li class="hi"><span>屏東</span><div><a href="https://pd.pacific-mall.com.tw/dm.php">太平洋百貨屏東店 當期活動</a><a href="https://fupo.tw/blog/post/kenting-caesarpark">墾丁凱撒 部落格(未核實)</a></div></li>
+    </ul>
+    <p class="note">所有數字只引用來源頁面可見者。本頁為短期參考用途,不對外索引。</p>
+  </section>
+
+  <footer class="foot">
+    <span>Orderdan 簡單營銷 · 拼豆台灣市場調查</span>
+    <span>2026-09-08</span>
+  </footer>
+</div>
+</body>
+</html>
